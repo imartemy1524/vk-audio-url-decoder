@@ -2,9 +2,11 @@
 
 ## Методы:
 - **void** setUserId (`long` user_id):
-задаёт **`user_id`** 
+
+	задаёт **`user_id`** 
+
 	`user_id` - ***ID*** пользователя, который получает аудио
-- **char*** decode (`const char *` url,`boolean` need_mp3): 
+- **char*** decode (`const char *` url,`boolean` need_mp3):  
 Декодирует ссылку из зашифрованной в играбельную
 
  `url` - ссылка на закодированную аудиозапись, по типу 
