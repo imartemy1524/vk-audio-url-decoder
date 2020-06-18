@@ -230,8 +230,12 @@ int main(int argc, char* argv[]) {
         url = argv[1];
         try {
             id = stoi(__argv[2]);
-        }catch (std::out_of_range ex) {
-            cout << "Second parametr have to be a number";
+        }catch (std::invalid_argument ex) {
+            cout << "Second parameter have to be a number";
+            exit(-1);
+        }
+        catch (std::out_of_range ex) {
+            cout << "Second parameter have to be a number";
             exit(-1);
         }
     }
