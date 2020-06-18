@@ -276,5 +276,5 @@ EXPORT char* toMP3(const char* url) {
 
 #endif
 
-//compile - g++ -shared -fPIC Source.cpp -o lib.so -rdynamic 
+//compile - g++ -shared -fPIC vk-audio-url-decoder.cpp -o lib.so -rdynamic 
 
