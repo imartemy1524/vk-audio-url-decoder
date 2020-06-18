@@ -1,6 +1,6 @@
 # vk-audio-url-decoder
 
-##Методы:
+## Методы:
 - **void** setUserId (`long` user_id):
 задаёт **`user_id`** 
 	`user_id` - ***ID*** пользователя, который получает аудио
@@ -17,7 +17,7 @@
 `url` - ссылка на аудиозапись в формате **m3u8**, по типу 
 > https://cs1-59v4.vkuseraudio.net/p21/dce69e69fda/9de954d0b39405/index.m3u8?extra=7CrE-4wK3XICdOO4uXaCO-UbqTYXxtPCX9mzW9hxijr7uPHJCRYC3jTtPcMGki...
 
-##Пример на питоне:
+## Пример на питоне:
 
 ```python
 import ctypes
