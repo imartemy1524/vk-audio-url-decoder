@@ -6,6 +6,7 @@
 	`user_id` - ***ID*** пользователя, который получает аудио
 - **char*** decode (`const char *` url,`boolean` need_mp3): 
 Декодирует ссылку из зашифрованной в играбельную
+
  `url` - ссылка на закодированную аудиозапись, по типу 
 >  https://vk.com/mp3/audio_api_unavailable.mp3?extra=AgnMALPWBKHJDc9UEwvdwhnHwgHdn21ZBI1lC21nBeD3nMCVmMLPrtLQB2rIy2SVAveWvw9Ls2u2zhDdCtHHDdy1ytrJyu9ulv9eEdP3yJHPzwuX...
 
