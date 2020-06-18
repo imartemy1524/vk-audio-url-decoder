@@ -11,7 +11,8 @@
 >  https://vk.com/mp3/audio_api_unavailable.mp3?extra=AgnMALPWBKHJDc9UEwvdwhnHwgHdn21ZBI1lC21nBeD3nMCVmMLPrtLQB2rIy2SVAveWvw9Ls2u2zhDdCtHHDdy1ytrJyu9ulv9eEdP3yJHPzwuX...
 
 `need_mp3` - если `true`, то возвращается ссылка на **mp3** аудио, иначе возвращается ссылка на **m3u8**
-	**ВАЖНО!!!**
+
+**ВАЖНО!!!**
 	Убедитесь, что перед вызовом этого метода вы вызвали метод ** `setUserId`**
 - **char*** toMP3(`const char *` url):
 конвертирует ссылку **m3u8** в **mp3**
