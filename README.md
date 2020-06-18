@@ -34,5 +34,6 @@ url_not_decrypted = "https://vk.com/mp3/audio_api_unavailable.mp3?extra=ewiowe..
 url_decrypted = lib.decode(url_not_decrypted.encode(),True).decode();#декодируем
 print("ссылка получена:",url_decrypted);
 ```
-
+## P.S.
+Так же предусмотрена возможность компиляции в executable (`#ifdef _DEBUG`) - надо вызвать программу с 2-мя аргументами: первый - ссылка, второй - id пользователя. 
 
