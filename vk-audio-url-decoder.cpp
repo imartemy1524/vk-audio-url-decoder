@@ -216,10 +216,9 @@ void m3u8ToMp3(string& url) {
 
 #ifdef _DEBUG
 
-int main(void) {
-    long size = sizeof(__argv) / sizeof(*__argv);
+int main(int argc, char* argv[]) {
     string url;
-    if (size != 2) {
+    if (argc != 3) {
         //getting url and id
         cout << "Please enter url to decode:\n";
         cin >> url;
@@ -228,9 +227,9 @@ int main(void) {
         cin >> id;
     }
     else {
-        url = __argv[0];
+        url = argv[1];
         try {
-            id = stoi(__argv[1]);
+            id = stoi(__argv[2]);
         }catch (std::out_of_range ex) {
             cout << "Second parametr have to be a number";
             exit(-1);
@@ -273,5 +272,5 @@ EXPORT char* toMP3(const char* url) {
 
 #endif
 
-//compile - g++ -shared -fPIC vk-audio-url-decoder.cpp -o lib.so -rdynamic 
+//compile - g++ -shared -fPIC Source.cpp -o lib.so -rdynamic 
 
