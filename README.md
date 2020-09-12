@@ -4,16 +4,17 @@
 - **void** setUserId (`long` user_id):
 
 	задаёт **`user_id`** - ***ID*** пользователя, который получает аудио
-- **char*** decode (`const char *` url,`boolean` need_mp3):  
+- **char*** decode (`const char *` url,`int` user_id=-1,`boolean` need_mp3=true):  
 Декодирует ссылку из зашифрованной в играбельную
 
  `url` - ссылка на закодированную аудиозапись, по типу 
 >  https://vk.com/mp3/audio_api_unavailable.mp3?extra=AgnMALPWBKHJDc9UEwvdwhnHwgHdn21ZBI1lC21nBeD3nMCVmMLPrtLQB2rIy2SVAveWvw9Ls2u2zhDdCtHHDdy1ytrJyu9ulv9eEdP3yJHPzwuX...
 
+`user_id` - передавать id пользователя ( или вызвать метод `setUserId` )
+
 `need_mp3` - если `true`, то возвращается ссылка на **mp3** аудио, иначе возвращается ссылка на **m3u8**
 
-**ВАЖНО!!!**
-Убедитесь, что перед вызовом этого метода вы вызвали метод **setUserId**
+
 - **char*** toMP3(`const char *` url):
 конвертирует ссылку **m3u8** в **mp3**
 `url` - ссылка на аудиозапись в формате **m3u8**, по типу 
@@ -32,9 +33,7 @@ lib.toMP3.restype=ctypes.c_char_p;  #устанавливаем результа
 
 lib.setUserId(100)#id пользователя, получившиго ссылку
 url_not_decrypted = "https://vk.com/mp3/audio_api_unavailable.mp3?extra=ewiowe..."#ссылка
-url_decrypted = lib.decode(url_not_decrypted.encode(),True).decode();#декодируем
+url_decrypted = lib.decode(url_not_decrypted.encode()).decode();#декодируем
 print("ссылка получена:",url_decrypted);
 ```
-## P.S.
-Так же предусмотрена возможность компиляции в executable (`#ifdef _DEBUG`) - надо вызвать программу с 2-мя аргументами: первый - ссылка, второй - id пользователя. 
 
