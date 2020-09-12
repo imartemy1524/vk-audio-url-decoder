@@ -11,7 +11,6 @@
     #pragma warning Unknown dynamic link import/export semantics.
 
 #endif
-#pragma region C_CODE
 #pragma warning(disable : 4996)
 
 #include <iostream>
@@ -19,6 +18,7 @@
 #include <math.h>
 #include <vector>
 #include <cstdlib>
+#include <cstdio>
 
 #include <sstream>
 
@@ -28,7 +28,7 @@
 
 using namespace std;
 #ifndef stol
-long stol(string& str) {
+long stol(string const& str) {
     long i;
     sscanf(str.c_str(), "%d", &i);
     return i;
@@ -217,11 +217,12 @@ void m3u8ToMp3(string& url) {
         }
     }
 }
-EXPORT char* decode(char* url, const long user_id, const bool need_mp3) {
+EXPORT char* decode(char* url, const long user_id=-1, const bool need_mp3=true) {
     string answer;
+    if(user_id!=-1)id=user_id;
     try {
         answer = string(url);
-        answer = Gt(answer, user_id);
+        answer = Gt(answer, id);
         if (need_mp3)m3u8ToMp3(answer);
 
         char* z = new char[answer.length() + 1];
@@ -244,5 +245,3 @@ EXPORT char* toMP3(const char* url) {
     strcpy(e, ans.c_str());
     return e;
 }
-
-//compile - g++ -shared -fPIC vk-audio-url-decoder.cpp -o lib.so -rdynamic 
