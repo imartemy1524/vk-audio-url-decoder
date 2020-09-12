@@ -1,6 +1,7 @@
 # vk-audio-url-decoder
 ## Компиляция:
 **linux** - g++ -shared -fPIC vk-audio-url-decoder.cpp -o lib.so -rdynamic 
+
 **windows** - с помощью visual studio
 ## Методы:
 - **void** setUserId (`long` user_id):
